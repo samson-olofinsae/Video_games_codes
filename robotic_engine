@@ -1,0 +1,31 @@
+#Robotic simulation for building the engine of a robot
+# Four commands (instruction) modes are possible - "activate", "deactivate", "quit", and "guide"
+
+
+instruction = ""
+activated = False
+while True:
+    instruction = input ("> ").lower()
+    if instruction == "activate":
+        if activated:
+            print ("robot already activated")
+        else:
+            activated = True
+        print ("robot activated...")
+    elif instruction == "deactivate":
+        if not activated:
+            print ("robot already deactivated")
+        else:
+            activated = False
+            print ("robot deactivated")
+    elif instruction == "guide":
+        print("""
+activated - to activate the robot
+deactivated - to deactivate the robot
+quit - to quit the game
+        """)
+    elif instruction == "quit":
+        break
+    else:
+        print ("Input command is invalid")
+
